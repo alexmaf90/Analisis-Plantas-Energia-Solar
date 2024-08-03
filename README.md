@@ -1,29 +1,33 @@
 # Analisis-Plantas-Energia-Solar
 
-En este documento se analizarán los datos de una compañía de generación de energía solar fotovoltaica. Se han detectado comportamientos anómalos en dos de las plantas; nuestro objetivo es identificar el motivo y resolver los problemas observados.
+En este proyecto se analizarán los datos de una compañía de generación de energía solar fotovoltaica. Se han detectado comportamientos anómalos en dos de las plantas; nuestro objetivo es identificar el motivo y resolver los problemas observados.
 
 ## Objetivo
 
 Analizar los datos de las plantas solares para identificar problemas que afectan su rendimiento.
+
+Antes de empezar con el análsis se comienza por entender el proceso y cómo funcionan este tipo de plantas.
 
 GRAFICO IRRADIACION 
 
 ## Palancas Clave
 
 1. **Irradiación**: Influye en la generación de corriente continua (DC). Un exceso de temperatura puede reducir la eficiencia.
-2. **Estado de los Paneles**: Paneles limpios y funcionando correctamente son cruciales para maximizar la generación de DC.
+2. **Estado de los Paneles**: Paneles limpios y funcionando correctamente son claves para maximizar la generación de DC.
 3. **Eficiencia de Inverters**: La conversión de DC a corriente alterna (AC) debe ser eficiente para minimizar pérdidas.
 4. **Medidores y Sensores**: Esenciales para monitorear y detectar fallos. Su mal funcionamiento puede comprometer el análisis.
 
 ## KPIs
 
 - **Irradiación**: Energía solar que llega a los paneles.
-- **Temperatura Ambiente y del Módulo**: Medida en grados Celsius.
+- **Temperatura Ambiente y del Módulo**: Medida en grados Centigrados.
 - **Potencia DC**: Corriente continua medida en kW.
 - **Potencia AC**: Corriente alterna medida en kW.
 - **Eficiencia del Inverter**: Calculada como \( \text{Eficiencia} = \left(\frac{\text{AC}}{\text{DC}}\right) \times 100 \% \)
 
 ## Entidades y Datos
+
+Para determinar las entidades es necesario conocer de qué se compone una planta solar.
 
 - **Celdas**: Unidad mínima de generación.
 - **Módulos**: Celdas encapsuladas en estructuras rectangulares.
@@ -44,17 +48,20 @@ Los datos se registran en ventanas de 15 minutos durante un período de 34 días
   - **Temperatura del Módulo**: 1 sensor por planta.
 
 
+
 # Análisis de Generación y Transformación de Energía en Plantas Solares
 
 ## Datos de Generación de la Planta 1
 
 Se observó una discrepancia significativa entre la generación de corriente continua (DC) y corriente alterna (AC) en la Planta 1. La conversión de DC a AC es sorprendentemente baja, con los inverters transformando solo aproximadamente el 10% de DC a AC.
 
+Grafico generación de energía planta 1
+
 ### Detalles de los Inverters
 
 - **Número de Inverters**: 22
 - **Mediciones**: Todos los inverters tienen un número similar de mediciones, aunque no idéntico.
-  - Las diferencias podrían deberse a paradas por mantenimiento o pérdidas de datos, lo cual debe ser considerado en el análisis.
+  - Las diferencias podrían deberse a paradas por mantenimiento o pérdidas de datos, lo cual debería considerado en el análisis.
 
 ### Período de Datos
 
@@ -67,10 +74,17 @@ Se observó una discrepancia significativa entre la generación de corriente con
 - **Fechas**: 15 de mayo de 2020 a 17 de junio de 2020
 - **Cobertura**: Datos disponibles para todos los días del período.
   - **Días con Menos Mediciones**: Algunos días, como el 21/05 y el 29/05, también presentan menos mediciones, lo cual refleja una irregularidad en la recopilación de datos.
+
+  GRAFICO Mediciones sensor temperatura ambiente P1
   
 ## Datos de Generación de la Planta 2
 
 En la Planta 2, los valores de corriente continua (DC) y corriente alterna (AC) están mucho más cercanos entre sí. Vamos a calcular el ratio de conversión DC a AC para evaluar su rendimiento.
+
+TABLA EFICIENCIA PLANTA 2
+
+Ahora los valores del ratio son muy cercanos a uno.
+De media el ratio de DC es aproximadement un 2% superior a AC. Hay algunos casos donde AC es mayor que DC, esto a priori es raro, puede tener su explicaicon técnica.
 
 ### Detalles de los Inverters
 
@@ -90,7 +104,7 @@ En la Planta 2, los valores de corriente continua (DC) y corriente alterna (AC) 
 - **Cobertura**: Datos disponibles para todos los días del período.
   - **Días con Menos Mediciones**: Algunos días, como el 15/05, presentan menos mediciones, aunque la falta de datos es menor en comparación con otros datasets. No obstante, la recopilación de datos no es completamente regular.
 
-## Principales Conclusiones
+## Principales Conclusiones Hasta este punto
 
 ### Eficiencia de los Inverters
 
@@ -102,6 +116,8 @@ En la Planta 2, los valores de corriente continua (DC) y corriente alterna (AC) 
 Para evaluar la eficiencia de los inverters, se crea la variable eficiencia de la siguiente forma: (AC/DC) * 100.
 
 #### Distribución de la Eficiencia
+
+Grafico eficiencia Bimodal
 
 - **Distribución Bimodal**: Hay dos grupos claramente diferenciados:
   - **Planta 1**: Valores cercanos al 0%.
@@ -120,19 +136,27 @@ Cada planta cuenta con un único sensor para cada KPI, por lo que los datos son 
 
 #### Diferencia en la Energía Recibida por Planta
 
+GRAFICO IRRADIACION Y TEMPERATURA POR PLANTA
+
 En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin embargo, esta diferencia en la recepción de energía solar no parece explicar completamente el problema de rendimiento observado.
 
 #### Relación entre Irradiación, Temperatura Ambiente y Temperatura del Módulo
 
+GRAFICO CORRELACION
+
 - La **irradiación** muestra una alta correlación con la **temperatura del módulo**, cercana a 1, lo que indica que la temperatura del módulo aumenta con la irradiación.
 - La **irradiación** correlaciona menos con la **temperatura ambiente**, aunque sigue siendo una correlación significativa. Esta menor correlación puede deberse a que la temperatura ambiente al inicio del día es más baja después de la noche y se incrementa a medida que avanza el día.
 
-#### Análisis de la Irradiación y la Temperatura a lo Largo del Día
+#### Análisis de la Irradiación media por hora
+
+Grafico irradiacion media por hora 
 
 - La **mayor irradiación** se produce entre las 11:00 y las 13:00.
 - La **irradiación** cesa después de las 18:00.
 
 #### Análisis de la Temperatura Media por Horas
+
+Grafico temperatura media por hora
 
 - Ambas plantas muestran patrones similares en términos de temperatura, lo que sugiere que están ubicadas en zonas geográficas no muy distantes entre sí.
 - La **irradiación** está presente entre las 07:00 y las 17:00, y la **irradiación máxima** ocurre entre las 11:00 y las 12:00.
@@ -142,11 +166,15 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 ### Análisis de la Irradiación frente a la Energía Corriente (DC) Generada
 
+Grafico Scatterplot irradiacion Generacion DC
+
 - **Planta 2** produce significativamente menos kW de DC en comparación con la **Planta 1**, a pesar de niveles similares de irradiación.
 - Anteriormente, se observó que la relación entre DC y AC en la Planta 1 era anómala.
 - Asumiremos que los datos de DC y AC son correctos para continuar el análisis.
 
 ### ¿Es Constante la Generación de Energía a lo Largo del Día?
+
+GRAFICO ENERGIA DC Constante
 
 - **Planta 1** muestra una mayor variabilidad en la generación de DC, mientras que la **Planta 2** es mucho más constante.
 - Los bajos niveles de generación de DC en la Planta 2 son sorprendentes en comparación con la Planta 1.
@@ -167,7 +195,7 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 - Los niveles bajos de DC en la Planta 2 son constantes y sus curvas diarias parecen normales.
 
-### Resumen de los Análisis
+### Insights analisis irradiación y generación de DC
 
 - **Irradiación y Energía Solar**: Ambas plantas reciben una cantidad suficiente y similar de energía solar, por lo que, en teoría, deberían tener un rendimiento similar.
 - **Generación de DC**:
@@ -178,7 +206,11 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 ### Análisis de la Transformación de Energía DC en AC
 
+GRAFICO TRANSFORMACION DC AC
+
 - **Patrones Claros**: La Planta 2 transforma la corriente DC a AC de manera mucho más eficiente que la Planta 1.
+
+GRAFICO EFICIENCIA 
 
 #### Insight
 
@@ -192,28 +224,25 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 2. **Planta 2**:
    - Investigar por qué la eficiencia de conversión disminuye durante las horas de mayor irradiación.
 
-### Análisis Adicional de la Planta 
-
-2
+### Análisis Adicional de la Planta 2
 
 - **Pérdida de Eficiencia**:
   - En las horas centrales del día, se observa pérdida de eficiencia en la Planta 2.
-  - Esta pérdida es menor comparada con el análisis previo.
+  - Si hacemos el mismo análisis solo sobre la planta 2, la pérdida energía en las horas centrales del día existe pero es mucho menor. 
   
 - **Distribución de Eficiencia**:
   - La eficiencia de conversión es cero en un conjunto de datos, lo que contribuye al problema observado.
-  - Este problema parece estar relacionado con la falta de generación de DC en esos momentos, no con un problema de los inverters.
+  - Si ponemos la condición de que la generacion de DC es mayor que 0, la eficiencia de conversion supera el 96&, por lo que el problema parece estar relacionado con la falta de generación de DC en esos momentos, no con un problema de los inverters.
 
-- **Condición DC > 0**:
-  - Cuando hay generación de DC, la eficiencia de conversión supera el 96%.
-  
-- **Distribución del Porcentaje de Producción Cero de DC**:
+- **Distribución del Porcentaje de no producción de Energía DC por Inverter**:
   - La variabilidad es significativa: algunos inverters tienen menos del 5% de tiempo con DC cero, mientras que otros superan el 30%.
   - Dado que esto ocurre durante las horas de mayor irradiación, debería esperarse una generación de DC consistente.
 
 #### Insight
 
 - En la Planta 2, varios inverters no reciben suficiente producción de DC, indicando que algunos módulos necesitan revisión.
+  
+BOXPLOT INVERTERS PLANTA 2
 
 #### Insight 
 
@@ -233,7 +262,7 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 #### Evaluación de la Generación de DC
 
 - **Datos por Inverter**:
-  - La eficiencia de los inverters es constante y baja.
+  - La eficiencia de los inverters es constante y baja.  
   
 - **Fallos en la Generación de DC**:
   - A pesar de algunos fallos en inverters, su magnitud es inferior al 2% de las mediciones.
@@ -242,15 +271,29 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
   - La generación de DC en la Planta 1 es correcta.
   - El problema parece residir en la transformación de DC a AC.
 
-- **Gráfico de Inverters con Generación Cero de DC**:
-  - Aunque algunos inverters han tenido fallos, estos son mínimos en comparación con el total de mediciones.
+Gráfico de Inverters con Generación Cero de DC
 
-#### Insight
+  - Aunque algunos inverters han tenido fallos, estos son mínimos en comparación con el total de mediciones
+  - Por tanto, el fallo en la Planta 1 está en la conversión de DC a AC, no en la generación de DC.
 
-- El fallo en la Planta 1 está en la conversión de DC a AC, no en la generación de DC.
+# CONCLUSIONES
 
+Tras el análisis de los las principales conclusiones extraidas son las siguientes: 
 
+- Existen problemas importantes de calidad de datos. Se debería revisar en qué parte de la cadena se generan estos problemas, incluyendo los medidores de las plantas.
+- El hecho de que la generación en DC sea unas 10 veces superior en la planta 1 que en la 2, sumado al hecho de que la eficiencia en la planta 1 esté sobre el 10% nos lleva a pensar que el dato de generación de DC en la planta 1 puede estar artificialmente escalado por algún motivo.
+De momento a falta de comprobación vamos a asumir que los datos son correctos.
+* La dos plantas han recibido altas cantidades de irradiación, no hemos localizado ningún problema en esta fase
+* Aunque la temperatura ambiente es superior en la planta 2 y sus módulos se calientan más que los de la planta 1 esto no parece tener un impacto significativo
+* La generación de DC de la planta 1 funciona bien, los módulos parecen llevar DC a los inverters.
+* La generación de DC de la planta 2 NO funciona bien, algunos módulos llevan muy poco DC a los inverters incluso en las horas de mayor irradiación.
+* La transformación de DC a AC de la planta 1 NO funciona bien, solo se transforma en torno al 10%, eso sí, de forma constante. Y esta baja eficiencia no es debida a momentos de no recepción de DC ni se concentra en inverters concretos, si no que parece más estructural (de nuevo tener en cuenta que podría deberse a un problema de calidad de datos en kw_dc de la planta 1
+* La transformación de DC a AC de la planta 2 funciona bien, ya que una vez eliminados los períodos de generación cero de DC el resto tienen una eficiencia superior al 97%
 
+Pasos a seguir: 
 
+Revisar la captación de datos y su fiabilidad
+Revisión de mantenimiento en los módulos de los inverters de la planta 2 en los que hay muchos momentos de generación cero de DC
+Revisión de mantenimiento de los inverters de la Planta 1
 
 Este análisis se basa en la suposición de que los datos de DC y AC son correctos, a pesar de las anomalías observadas. Se recomienda una revisión adicional con expertos para confirmar estas conclusiones y resolver cualquier problema de datos.
