@@ -8,7 +8,7 @@ Analizar los datos de las plantas solares para identificar problemas que afectan
 
 Antes de empezar con el análsis se comienza por entender el proceso y cómo funcionan este tipo de plantas.
 
-GRAFICO IRRADIACION 
+![Funcionamiento_plantas_solares](Funcionamiento_plantas_solares.png)
 
 ## Palancas Clave
 
