@@ -143,7 +143,7 @@ En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin 
 
 #### Relación entre Irradiación, Temperatura Ambiente y Temperatura del Módulo
 
-![Irradiacion%20y%20temperatura%20por%20planta](Irradiacion%20y%20temperatura%20por%20planta.png)
+![Correlacion](Correlacion.png)
 
 - La **irradiación** muestra una alta correlación con la **temperatura del módulo**, cercana a 1, lo que indica que la temperatura del módulo aumenta con la irradiación.
 - La **irradiación** correlaciona menos con la **temperatura ambiente**, aunque sigue siendo una correlación significativa. Esta menor correlación puede deberse a que la temperatura ambiente al inicio del día es más baja después de la noche y se incrementa a medida que avanza el día.
