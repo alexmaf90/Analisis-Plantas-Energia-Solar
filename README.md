@@ -8,7 +8,8 @@ Analizar los datos de las plantas solares para identificar problemas que afectan
 
 Antes de empezar con el análsis se comienza por entender el proceso y cómo funcionan este tipo de plantas.
 
-![Funcionamiento_plantas_solares](Funcionamiento_plantas_solares.png)
+![Funcionamiento%20plantas%20solares](Funcionamiento%20plantas%20solares.png)
+
 
 ## Palancas Clave
 
@@ -55,7 +56,7 @@ Los datos se registran en ventanas de 15 minutos durante un período de 34 días
 
 Se observó una discrepancia significativa entre la generación de corriente continua (DC) y corriente alterna (AC) en la Planta 1. La conversión de DC a AC es sorprendentemente baja, con los inverters transformando solo aproximadamente el 10% de DC a AC.
 
-Grafico generación de energía planta 1
+![GraficoGeneracionEnergiaP1](GraficoGeneracionEnergiaP1.png)
 
 ### Detalles de los Inverters
 
@@ -75,13 +76,13 @@ Grafico generación de energía planta 1
 - **Cobertura**: Datos disponibles para todos los días del período.
   - **Días con Menos Mediciones**: Algunos días, como el 21/05 y el 29/05, también presentan menos mediciones, lo cual refleja una irregularidad en la recopilación de datos.
 
-  GRAFICO Mediciones sensor temperatura ambiente P1
+  ![TemperaturaAmbienteP1](TemperaturaAmbienteP1.png)
   
 ## Datos de Generación de la Planta 2
 
 En la Planta 2, los valores de corriente continua (DC) y corriente alterna (AC) están mucho más cercanos entre sí. Vamos a calcular el ratio de conversión DC a AC para evaluar su rendimiento.
 
-TABLA EFICIENCIA PLANTA 2
+![RatioEficienciaP2](Ratio%20eficiencia%20Planta%202.png)
 
 Ahora los valores del ratio son muy cercanos a uno.
 De media el ratio de DC es aproximadement un 2% superior a AC. Hay algunos casos donde AC es mayor que DC, esto a priori es raro, puede tener su explicaicon técnica.
@@ -117,7 +118,7 @@ Para evaluar la eficiencia de los inverters, se crea la variable eficiencia de l
 
 #### Distribución de la Eficiencia
 
-Grafico eficiencia Bimodal
+![Grafico%20eficiencia%20Bimodal](Grafico%20eficiencia%20Bimodal.png) 
 
 - **Distribución Bimodal**: Hay dos grupos claramente diferenciados:
   - **Planta 1**: Valores cercanos al 0%.
@@ -136,27 +137,27 @@ Cada planta cuenta con un único sensor para cada KPI, por lo que los datos son 
 
 #### Diferencia en la Energía Recibida por Planta
 
-GRAFICO IRRADIACION Y TEMPERATURA POR PLANTA
+![Irradiacion%20y%20temperatura%20por%20planta](Irradiacion%20y%20temperatura%20por%20planta.png)
 
 En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin embargo, esta diferencia en la recepción de energía solar no parece explicar completamente el problema de rendimiento observado.
 
 #### Relación entre Irradiación, Temperatura Ambiente y Temperatura del Módulo
 
-GRAFICO CORRELACION
+![Irradiacion%20y%20temperatura%20por%20planta](Irradiacion%20y%20temperatura%20por%20planta.png)
 
 - La **irradiación** muestra una alta correlación con la **temperatura del módulo**, cercana a 1, lo que indica que la temperatura del módulo aumenta con la irradiación.
 - La **irradiación** correlaciona menos con la **temperatura ambiente**, aunque sigue siendo una correlación significativa. Esta menor correlación puede deberse a que la temperatura ambiente al inicio del día es más baja después de la noche y se incrementa a medida que avanza el día.
 
 #### Análisis de la Irradiación media por hora
 
-Grafico irradiacion media por hora 
+![Analisis20%de20%la%20irradiacion%20media%20por%20hora](Analisis20%de20%la%20irradiacion%20media%20por%20hora.png)
 
 - La **mayor irradiación** se produce entre las 11:00 y las 13:00.
 - La **irradiación** cesa después de las 18:00.
 
 #### Análisis de la Temperatura Media por Horas
 
-Grafico temperatura media por hora
+![TemperaturaPorHoras](TemperaturaPorHoras.png)
 
 - Ambas plantas muestran patrones similares en términos de temperatura, lo que sugiere que están ubicadas en zonas geográficas no muy distantes entre sí.
 - La **irradiación** está presente entre las 07:00 y las 17:00, y la **irradiación máxima** ocurre entre las 11:00 y las 12:00.
@@ -166,7 +167,7 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 ### Análisis de la Irradiación frente a la Energía Corriente (DC) Generada
 
-Grafico Scatterplot irradiacion Generacion DC
+![Scatterplot%20Irradiacion%20Generacion%20DC%20por%20planta](Scatterplot%20Irradiacion%20Generacion%20DC%20por%20planta.png)
 
 - **Planta 2** produce significativamente menos kW de DC en comparación con la **Planta 1**, a pesar de niveles similares de irradiación.
 - Anteriormente, se observó que la relación entre DC y AC en la Planta 1 era anómala.
@@ -174,7 +175,7 @@ Grafico Scatterplot irradiacion Generacion DC
 
 ### ¿Es Constante la Generación de Energía a lo Largo del Día?
 
-GRAFICO ENERGIA DC Constante
+![Energía%20DC%20constante](Energía%20DC%20constante.png)
 
 - **Planta 1** muestra una mayor variabilidad en la generación de DC, mientras que la **Planta 2** es mucho más constante.
 - Los bajos niveles de generación de DC en la Planta 2 son sorprendentes en comparación con la Planta 1.
@@ -206,11 +207,11 @@ GRAFICO ENERGIA DC Constante
 
 ### Análisis de la Transformación de Energía DC en AC
 
-GRAFICO TRANSFORMACION DC AC
+![Trnaformacion%20DC%20AC](Trnaformacion%20DC%20AC.png)
 
 - **Patrones Claros**: La Planta 2 transforma la corriente DC a AC de manera mucho más eficiente que la Planta 1.
 
-GRAFICO EFICIENCIA 
+![Eficiencia](Eficiencia.png)
 
 #### Insight
 
@@ -242,11 +243,13 @@ GRAFICO EFICIENCIA
 
 - En la Planta 2, varios inverters no reciben suficiente producción de DC, indicando que algunos módulos necesitan revisión.
   
-BOXPLOT INVERTERS PLANTA 2
+![Eficiencia](Eficiencia.png)
 
 #### Insight 
 
 - Una vez descontado el problema de la no generación de DC, los inverters de la Planta 2 están funcionando bien y transforman DC a AC de manera efectiva.
+
+![EficienciaCorregida](EficienciaCorregida.png)
 
 ### Análisis de la Planta 1
 
