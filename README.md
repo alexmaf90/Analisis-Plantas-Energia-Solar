@@ -150,7 +150,7 @@ En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin 
 
 #### Análisis de la Irradiación media por hora
 
-![Analisis20%de20%la%20irradiacion%20media%20por%20hora](Analisis20%de20%la%20irradiacion%20media%20por%20hora.png)
+![Analisis%20de%20la%20irradiacion%20media%20por%20hora](Analisis%20de%20la%20irradiacion%20media%20por%20hora.png)
 
 - La **mayor irradiación** se produce entre las 11:00 y las 13:00.
 - La **irradiación** cesa después de las 18:00.
