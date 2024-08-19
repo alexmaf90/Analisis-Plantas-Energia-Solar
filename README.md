@@ -1,4 +1,4 @@
-# Analisis-Plantas-Energia-Solar
+# Análisis-Plantas-Energia-Solar
 
 En este proyecto se analizarán los datos de una compañía de generación de energía solar fotovoltaica. Se han detectado comportamientos anómalos en dos de las plantas; El objetivo es tratar de identificar el motivo y resolver los problemas observados.
 
