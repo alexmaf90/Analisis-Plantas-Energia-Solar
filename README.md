@@ -1,6 +1,6 @@
 # Analisis-Plantas-Energia-Solar
 
-En este proyecto se analizarán los datos de una compañía de generación de energía solar fotovoltaica. Se han detectado comportamientos anómalos en dos de las plantas; nuestro objetivo es identificar el motivo y resolver los problemas observados.
+En este proyecto se analizarán los datos de una compañía de generación de energía solar fotovoltaica. Se han detectado comportamientos anómalos en dos de las plantas; El objetivo es tratar de identificar el motivo y resolver los problemas observados.
 
 ## Objetivo
 
@@ -9,22 +9,6 @@ Analizar los datos de las plantas solares para identificar problemas que afectan
 Antes de empezar con el análsis se comienza por entender el proceso y cómo funcionan este tipo de plantas.
 
 ![Funcionamiento%20plantas%20solares](Funcionamiento%20plantas%20solares.png)
-
-
-## Palancas Clave
-
-1. **Irradiación**: Influye en la generación de corriente continua (DC). Un exceso de temperatura puede reducir la eficiencia.
-2. **Estado de los Paneles**: Paneles limpios y funcionando correctamente son claves para maximizar la generación de DC.
-3. **Eficiencia de Inverters**: La conversión de DC a corriente alterna (AC) debe ser eficiente para minimizar pérdidas.
-4. **Medidores y Sensores**: Esenciales para monitorear y detectar fallos. Su mal funcionamiento puede comprometer el análisis.
-
-## KPIs
-
-- **Irradiación**: Energía solar que llega a los paneles.
-- **Temperatura Ambiente y del Módulo**: Medida en grados Centigrados.
-- **Potencia DC**: Corriente continua medida en kW.
-- **Potencia AC**: Corriente alterna medida en kW.
-- **Eficiencia del Inverter**: Calculada como \( \text{Eficiencia} = \left(\frac{\text{AC}}{\text{DC}}\right) \times 100 \% \)
 
 ## Entidades y Datos
 
@@ -37,6 +21,23 @@ Para determinar las entidades es necesario conocer de qué se compone una planta
 - **Inverters**: Transforman DC en AC.
 - **Planta**: Conjunto de inverters, medidores y sensores.
 
+## KPIs
+
+- **Irradiación**: Energía solar que llega a los paneles.
+- **Temperatura Ambiente y del Módulo**: Medida en grados Centigrados.
+- **Potencia DC**: Corriente continua medida en kW.
+- **Potencia AC**: Corriente alterna medida en kW.
+- **Eficiencia del Inverter**: Calculada como \( \text{Eficiencia} = \left(\frac{\text{AC}}{\text{DC}}\right) \times 100 \% \)
+
+
+## Palancas Clave
+
+1. **Irradiación**: Influye en la generación de corriente continua (DC). Un exceso de temperatura puede reducir la eficiencia.
+2. **Estado de los Paneles**: Paneles limpios y funcionando correctamente son claves para maximizar la generación de DC.
+3. **Eficiencia de Inverters**: La conversión de DC a corriente alterna (AC) debe ser eficiente para minimizar pérdidas.
+4. **Medidores y Sensores**: Esenciales para monitorizar y detectar fallos. Su mal funcionamiento puede comprometer el análisis.
+
+
 ## Granularidad de los Datos
 
 Los datos se registran en ventanas de 15 minutos durante un período de 34 días. Las entidades disponibles son:
@@ -47,7 +48,6 @@ Los datos se registran en ventanas de 15 minutos durante un período de 34 días
   - **Irradiación**: 1 sensor por planta.
   - **Temperatura Ambiente**: 1 sensor por planta.
   - **Temperatura del Módulo**: 1 sensor por planta.
-
 
 
 # Análisis de Generación y Transformación de Energía en Plantas Solares
