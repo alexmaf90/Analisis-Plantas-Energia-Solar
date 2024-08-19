@@ -257,7 +257,12 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 - Una vez descontado el problema de la no generación de DC, los inverters de la Planta 2 están funcionando bien y transforman DC a AC de manera efectiva.
 
+**Boxplot by Inverter Planta 2**
+
+![BoxplotbyInverterP2](BoxplotbyInverterP2.png)
+
 ### Análisis de la Planta 1
+- Se repite el análisis en la planta 1
 
 #### Evaluación de la Eficiencia de Inverters
 
