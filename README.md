@@ -27,7 +27,7 @@ Para determinar las entidades es necesario conocer de qué se compone una planta
 - **Temperatura Ambiente y del Módulo**: Medida en grados Centigrados.
 - **Potencia DC**: Corriente continua medida en kW.
 - **Potencia AC**: Corriente alterna medida en kW.
-- **Eficiencia del Inverter**: Calculada como <code>Eficiencia = (AC / DC) × 100 %</code>
+- **Eficiencia del Inverter**: Calculada como <code>Eficiencia = (AC / DC) × 100</code>
 
 
 ## Palancas Clave
@@ -212,7 +212,8 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 - **Patrones Claros**: La Planta 2 transforma la corriente DC a AC de manera mucho más eficiente que la Planta 1.
 
-**Gráfico de la eficiencia en las dos plantas**
+**Eficiencia en ambas plantas**
+
 ![Eficiencia](Eficiencia.png)
 
 #### Insight
@@ -231,11 +232,18 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 - **Pérdida de Eficiencia**:
   - En las horas centrales del día, se observa pérdida de eficiencia en la Planta 2.
-  - Si hacemos el mismo análisis solo sobre la planta 2, la pérdida energía en las horas centrales del día existe pero es mucho menor. 
+  - Si hacemos el mismo análisis solo sobre la planta 2, la pérdida energía en las horas centrales del día existe pero es mucho menor.
+
+**Grafico Eficiencia Planta 2**
+
+![EficienciaCorregida](EficienciaCorregida.png)
   
 - **Distribución de Eficiencia**:
+  
+  ![Grafico%20eficiencia%20Bimodal](Grafico%20eficiencia%20Bimodal.png)
+  
   - La eficiencia de conversión es cero en un conjunto de datos, lo que contribuye al problema observado.
-  - Si ponemos la condición de que la generacion de DC es mayor que 0, la eficiencia de conversion supera el 96&, por lo que el problema parece estar relacionado con la falta de generación de DC en esos momentos, no con un problema de los inverters.
+  - Si ponemos la condición de que la generacion de DC es mayor que 0, la eficiencia de conversion supera el 96%, por lo que el problema parece estar relacionado con la falta de generación de DC en esos momentos, no con un problema de los inverters.
 
 - **Distribución del Porcentaje de no producción de Energía DC por Inverter**:
   - La variabilidad es significativa: algunos inverters tienen menos del 5% de tiempo con DC cero, mientras que otros superan el 30%.
@@ -245,13 +253,9 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 - En la Planta 2, varios inverters no reciben suficiente producción de DC, indicando que algunos módulos necesitan revisión.
   
-![Eficiencia](Eficiencia.png)
-
 #### Insight 
 
 - Una vez descontado el problema de la no generación de DC, los inverters de la Planta 2 están funcionando bien y transforman DC a AC de manera efectiva.
-
-![EficienciaCorregida](EficienciaCorregida.png)
 
 ### Análisis de la Planta 1
 
