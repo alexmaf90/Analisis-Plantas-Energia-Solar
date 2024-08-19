@@ -27,7 +27,7 @@ Para determinar las entidades es necesario conocer de qué se compone una planta
 - **Temperatura Ambiente y del Módulo**: Medida en grados Centigrados.
 - **Potencia DC**: Corriente continua medida en kW.
 - **Potencia AC**: Corriente alterna medida en kW.
-- **Eficiencia del Inverter**: Calculada como \( \text{Eficiencia} = \left(\frac{\text{AC}}{\text{DC}}\right) \times 100 \% \)
+- **Eficiencia del Inverter**: Calculada como <code>Eficiencia = (AC / DC) × 100 %</code>
 
 
 ## Palancas Clave
@@ -76,7 +76,7 @@ Se observó una discrepancia significativa entre la generación de corriente con
 - **Cobertura**: Datos disponibles para todos los días del período.
   - **Días con Menos Mediciones**: Algunos días, como el 21/05 y el 29/05, también presentan menos mediciones, lo cual refleja una irregularidad en la recopilación de datos.
 
-  ![TemperaturaAmbienteP1](TemperaturaAmbienteP1.png)
+  ![DatosMedicionesP1](DatosMedicionesP1.png)
   
 ## Datos de Generación de la Planta 2
 
@@ -143,6 +143,7 @@ En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin 
 
 #### Relación entre Irradiación, Temperatura Ambiente y Temperatura del Módulo
 
+**Matriz de correlación**
 ![Correlacion](Correlacion.png)
 
 - La **irradiación** muestra una alta correlación con la **temperatura del módulo**, cercana a 1, lo que indica que la temperatura del módulo aumenta con la irradiación.
@@ -152,7 +153,7 @@ En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin 
 
 ![Analisis%20de%20la%20irradiacion%20media%20por%20hora](Analisis%20de%20la%20irradiacion%20media%20por%20hora.png)
 
-- La **mayor irradiación** se produce entre las 11:00 y las 13:00.
+- La **irradiación** está presente entre las 07:00 y las 17:00, y la **irradiación máxima** ocurre entre las 11:00 y las 13:00.
 - La **irradiación** cesa después de las 18:00.
 
 #### Análisis de la Temperatura Media por Horas
@@ -160,7 +161,7 @@ En general, la **Planta 2** recibe más energía solar que la **Planta 1**. Sin 
 ![TemperaturaPorHoras](TemperaturaPorHoras.png)
 
 - Ambas plantas muestran patrones similares en términos de temperatura, lo que sugiere que están ubicadas en zonas geográficas no muy distantes entre sí.
-- La **irradiación** está presente entre las 07:00 y las 17:00, y la **irradiación máxima** ocurre entre las 11:00 y las 12:00.
+
 - La **temperatura ambiente máxima** se produce entre las 14:00 y las 16:00.
 
 Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxima irradiación ocurre a las 12:00, mientras que la temperatura ambiente alcanza su máximo entre las 14:00 y las 16:00.
@@ -211,6 +212,7 @@ Se observa un **retraso** (lag) entre la irradiación y la temperatura: la máxi
 
 - **Patrones Claros**: La Planta 2 transforma la corriente DC a AC de manera mucho más eficiente que la Planta 1.
 
+**Gráfico de la eficiencia en las dos plantas**
 ![Eficiencia](Eficiencia.png)
 
 #### Insight
