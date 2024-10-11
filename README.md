@@ -2,6 +2,8 @@
 
 En este proyecto se analizarán los datos de una compañía de generación de energía solar fotovoltaica. Se han detectado comportamientos anómalos en dos de las plantas; El objetivo es tratar de identificar el motivo y resolver los problemas observados.
 
+Para ver el análisis completo visitar los notebooks. 
+
 ## Objetivo
 
 Analizar los datos de las plantas solares para identificar problemas que afectan su rendimiento.
